@@ -1,0 +1,228 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #090909;
+    background: #07141b;
+    
+}
+
+
+body.light {
+  background: #d1dae3;
+}
+
+.clock {
+    width: 360px;
+    height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    border: 5px;
+    box-shadow: 0em -1.2em 1.2em rgba(255, 255, 255, 0.06),
+                inset 0em -1.2em 1.2em rgba(255, 255, 255, 0.06),
+                0em 1.2em 1.2em rgba(0, 0, 0, 0.3),
+                inset 0em 1.2em 1.2em rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+}
+
+body.light .clock {
+    box-shadow: 0em -1.2em 1.2em rgba(255, 255, 255, 0.3),
+                inset 1em 1em -1em rgba(255, 255, 255, 0.3),
+                0em -1.2em -1.2em rgba(0, 0, 0, 0.5),
+                inset 1em -1em 1em rgba(0, 0, 0, 0.1);
+}
+
+.clock :hover {
+    cursor: pointer;
+}
+
+/* The small circle int the center */
+.clock:before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #3498db;
+    border-radius: 50%;
+    z-index: 10000;
+    /* kept as a high value, since wanted at top */
+}
+
+body.light .clock:before {
+    background: #3498db;
+}
+
+.indicators div{
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  background: #404040;
+}
+.indicators div:nth-child(1){
+  transform: rotate(30deg) translateY(-140px);
+}
+
+.indicators div:nth-child(2){
+  transform: rotate(60deg) translateY(-140px);
+}
+.indicators div:nth-child(3){
+  background: #3498db;
+  transform: rotate(90deg) translateY(-140px);
+}
+.indicators div:nth-child(4){
+  transform: rotate(120deg) translateY(-140px);
+}
+.indicators div:nth-child(5){
+  transform: rotate(150deg) translateY(-140px);
+}
+.indicators div:nth-child(6){
+  background: #3498db;
+  transform: rotate(180deg) translateY(-140px);
+}
+.indicators div:nth-child(7){
+  transform: rotate(210deg) translateY(-140px);
+}
+.indicators div:nth-child(8){
+  transform: rotate(240deg) translateY(-140px);
+}
+.indicators div:nth-child(9){
+  background: #3498db;
+  transform: rotate(270deg) translateY(-140px);
+}
+.indicators div:nth-child(10){
+  transform: rotate(300deg) translateY(-140px);
+}
+.indicators div:nth-child(11){
+  transform: rotate(330deg) translateY(-140px);
+}
+.indicators div:nth-child(12){
+  background: #3498db;
+  transform: rotate(360deg) translateY(-140px);
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec {
+    position: absolute;
+}
+
+/* length of respective arms; */
+.clock .hour, .hr {
+    width: 160px;
+    height: 160px;
+} 
+
+.clock .min, .mn {
+    width: 190px;
+    height: 190px;
+}
+
+.clock .sec, .sc {
+    width: 230px;
+    height: 230px;
+}
+
+
+.hr, .mn, .sc {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    position: absolute;
+    border-radius: 50%;
+    
+}
+
+
+.hr:before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 100px;
+    background: #303030;
+    z-index: 10;
+    /* z-index least */
+    border-radius: 2.8px;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-top: 25px solid #303030;
+}
+
+.mn:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background: #e95949;
+    z-index: 11;
+    /* z-index more than hour hand */
+    border-radius: 3px;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-top: 30px solid #e95949;
+  
+   
+}
+
+body.light .mn:before {
+    background: #e95949;
+
+}
+
+.sc:before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 150px;
+    background: #3498db;
+    z-index: 12;
+    /* z-index more than hour minute hand */
+    border-radius: 3px;
+    
+}
+
+
+.toggleClass {
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    width: 20px;
+    margin: 2px;
+    height: 20px;
+    font-size: 18px;
+    border-radius: 50%;
+    background: #d1dae3; 
+    color: #d1dae3;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    /* background: url(light.png) #d1dae3 no-repeat; */
+}
+
+
+.toggleClass:before {
+    position: absolute;
+    white-space: nowrap;
+    left: 25px;
+}
+
+body.light .toggleClass {
+    background: #091921;
+    color: #091921;
+    
+}
+
+
+body.light .toggleClass:before {
+    white-space: nowrap;
+}
+
